@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <!--fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--header-->
+    <header>
+        <nav class="navbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Rules">Rules</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Blog">Tips and Tricks</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-overlay">
+
+        </div>
+    </header>
+    <!--main content-->
+    <main class="container">
+        @RenderBody()
+    </main>
+    <!--footer-->
+    <footer class="footer">
+        <div class="container">
+            <p>Moment 2 i kursen DT071G</p>
+            <p>Skapad av Sandra Andersson</p>
+            <p>&copy; 2021</p>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
