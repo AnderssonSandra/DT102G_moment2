@@ -1,14 +1,25 @@
-﻿@{
-    ViewData["Title"] = "Tips and Tricks";
+﻿@model List<DT102G_moment2.Models.BlogPostModel>;
+
+@{
+    ViewData["Title"] = "Blogg Posts";
 }
 
-<nav class="undernav">
-    <ul class="undernav-nav">
-        <li class="undernav-item">
-            <a class="undernav-link" asp-area="" asp-controller="Home" asp-action="Blog">Se tips</a>
-        </li>
-        <li class="undernav-item">
-            <a class="undernav-link" asp-area="" asp-controller="Home" asp-action="Blog">Write tips</a>
-        </li>
-    </ul>
-</nav>
+<!--Get sub menu-->
+@Html.Partial("_SubMenu")
+
+<p class="blog-intro">@ViewBag.IntroText</p>
+
+<section>
+    @foreach (var blogPost in Model)
+    {
+    <article class="post-article">
+        <h3 class="post-heading">@blogPost.Title</h3>
+        <p class="post-text">@blogPost.Text</p>
+        <p class="post-name"> <b>Skriven av:</b> @blogPost.Name</p>
+        <p class="post-name"><b>Nivå på spelaren: </b> @blogPost.Level</p>
+        <p class="post-date"><b>Publicerad: </b>@blogPost.Date.ToString("yy-MM-dd"), kl. @blogPost.Date.ToString("hh:mm")</p>
+    </article>
+        
+    }
+</section>
+

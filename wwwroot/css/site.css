@@ -104,6 +104,11 @@ p {
     padding: 0.5em 0;
 }
 
+.form-error-message {
+    color: red;
+    font-size: 0.9em;
+}
+
 a:hover {
     text-decoration: underline;
 }
@@ -121,11 +126,46 @@ li {
     background-color: #145242 !important;
 }
 
-/*header*/
+b {
+    font-weight: bold;
+}
 
+.blog-intro {
+    display: block;
+    background-color: #FAA165;
+    max-width: 800px;
+    width: 90%;
+    margin: auto;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.post-created {
+    display: block;
+    background-color: #16c79a;
+    max-width: 800px;
+    width: 90%;
+    margin: auto;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.index-intro {
+    width: 90%;
+    max-width: 809px;
+    margin: 1em auto;
+    box-sizing: border-box;
+}
+
+
+/*header*/
 header {
     width: 100%;
-    height: 100%;
+    height: 50%;
     background-image: url("../Images/padel.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -220,11 +260,24 @@ header {
     box-sizing: border-box;
 }
 
+/*index*/
+
+.intro-div {
+    width: 100%;
+}
+
+.image-ball {
+    width: 20%;
+    margin: auto;
+    display: block;
+}
+
 /*rules*/
 .rules-article {
     width: 100%;
     margin: auto;
     max-width: 900px;
+    box-sizing: border-box;
 }
 
 .rules-ul {
@@ -235,3 +288,179 @@ header {
 .rules-ul li {
     padding: 0.4em 0;
 } 
+
+/*Blogposts*/
+
+.post-article {
+    width: 90%;
+    max-width: 800px;
+    margin: 1em auto;
+    padding: 1em;
+    position: relative;
+}
+
+.post-heading {
+    width: 100%;
+    padding: 1em 0 0.5em 1em;
+    color: #16c79a;
+    border-bottom: 5px solid #16c79a;
+    font-size: 1.8em;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.post-name {
+    padding: 0.5em 1em 0 1em;
+    font-size: 1em;
+}
+
+.post-text {
+    padding: 1em 1em 2em 1em;
+}
+
+.post-date {
+    padding: 0.5em 1em 0 1em;
+    font-size: 1em;
+}
+
+/*form*/
+
+form {
+    width: 90%;
+    max-width: 800px;
+    margin: 2em auto;
+    box-sizing: border-box;
+}
+
+label {
+
+    display: block;
+    padding: 1.5em 0 0.5em 0.5em;
+    font-weight: bold;
+}
+
+span {
+    display: block;
+}
+
+input, textarea, select {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 0.5em;
+}
+
+input[type="submit"] {
+    background-color: #16c79a;
+    display: block;
+    padding: 0.5em;
+    color: white;
+    width: 50%;
+    margin: 2em auto;
+}
+
+#checkbox-text {
+    display: inline-block;
+    width: 85%;
+    box-sizing: border-box;
+}
+
+#checkbox {
+    display: inline-block;
+    width: 10%;
+    height: 30px;
+    box-sizing: border-box;
+}
+/*tablet*/
+@media screen and (max-width: 1000px) {
+    /*fonts*/
+    h1 {
+        font-size: 2em;
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 1.7em;
+        padding: 2em 0 0.5em 0;
+    }
+
+    .rules-article {
+        padding: 0 3em;
+    }
+    
+    .nav-item {
+        padding: 0.3em;
+    }
+
+    .nav-link {
+        font-size: 2em;
+    }
+
+}
+
+/*phone*/
+@media screen and (max-width: 750px) {
+    /*fonts*/
+    p,
+    span,
+    label,
+    th,
+    td,
+    li,
+    input,
+    textarea,
+    select,
+    h4 {
+        font-family: 'Open Sans', sans-serif;
+        color: black;
+        line-height: 1.6;
+        font-size: 1.1em;
+        font-weight: normal;
+    }
+
+    h1 {
+        font-size: 1.7em;
+        width: 96%;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        padding: 1.5em 0 0.3em 0;
+    }
+
+    .undernav-link {
+        font-size: 1.4em;
+    }
+
+    .blog-intro {
+        font-size: 1em;
+    }
+    
+     /*main navigation*/
+    .nav-item {
+        padding: 0.3em;
+    }
+
+    .nav-link {
+        font-size: 1.3em;
+    }
+
+    .rules-article {
+        padding: 0 1em;
+    }
+
+    /*blog posts*/
+    .post-heading {
+        font-size: 1.4em;
+    }
+
+    .post-text {
+        padding: 1em 1em 1em 1em;
+    }
+
+    /*index*/
+    .image-ball {
+        width: 50%;
+    }
+}

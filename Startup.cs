@@ -24,6 +24,14 @@ namespace DT102G_moment2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews(); //activate MVC
+
+            //activate sessions 
+            services.AddDistributedMemoryCache();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +49,7 @@ namespace DT102G_moment2
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles(); //activate wwwroot
+            app.UseSession(); //activate session
 
             app.UseRouting();
 

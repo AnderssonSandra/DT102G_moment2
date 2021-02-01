@@ -1,0 +1,43 @@
+﻿@model DT102G_moment2.Models.BlogPostModel;
+
+@{
+    ViewData["Title"] = "Write Blog Post";
+}
+
+<!--Get sun menu-->
+@Html.Partial("_SubMenu")
+
+<!--message if blogpost successed-->
+@if (@ViewBag.PostCreated != null)
+{
+    <p class="post-created">@ViewBag.PostCreated</p>
+}
+
+<form method="post">
+    <label asp-for="Name">Namn</label><br />
+    <input asp-for="Name" /><br />
+    @*error message*@
+    <label asp-for="Level">Vilken nivå spelar du på?</label><br />
+    <span class="form-error-message" asp-validation-for="Name"></span><br />
+    <select asp-for="Level">
+        <option value="">Ange vilken nivå du spelar på</option>
+        <option value="Nybörjare">Nybörjare</option>
+        <option value="Medel">Medel</option>
+        <option value="Proffs">Proffs</option>
+    </select>
+    @*error message*@
+    <span class="form-error-message" asp-validation-for="Level"></span><br />
+    <label asp-for="Title">Titel</label><br />
+    <input asp-for="Title" /><br />
+    @*error message*@
+    <span class="form-error-message" asp-validation-for="Title"></span><br />
+    <label asp-for="Text">Text</label><br />
+    <textarea asp-for="Text"></textarea><br />
+    @*error message*@
+    <span class="form-error-message" asp-validation-for="Text"></span><br />
+    <label id="checkbox-text" asp-for="Checkbox">Du måste kryssa i rutan för att kuna publicera ditt blogginlägg: </label>
+    <input id="checkbox" asp-for="Checkbox" type="checkbox">
+    @*error message*@
+    <span class="form-error-message" asp-validation-for="Checkbox"></span><br />
+    <input type="submit" value="Publicera inlägg" />
+</form>
