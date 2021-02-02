@@ -9,19 +9,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
-<body>
+@{
+    var site = @ViewData["Title"];
+}
+<body onload="setActiveClass('@site')">
     <!--header-->
     <header>
         <nav class="navbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    <a id="home" class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Rules">Rules</a>
+                    <a id="rules" class="nav-link" asp-area="" asp-controller="Home" asp-action="Rules">Rules</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Blog">Tips and Tricks</a>
+                    <a id="blog" class="nav-link" asp-area="" asp-controller="Home" asp-action="Blog">Tips and Tricks</a>
                 </li>
             </ul>
         </nav>

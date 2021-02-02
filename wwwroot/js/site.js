@@ -1,4 +1,18 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿function setActiveClass(site) {
+    //get elements
+    var home = document.getElementById("home");
+    var rules = document.getElementById("rules");
+    var blog = document.getElementById("blog");
 
-// Write your JavaScript code.
+    switch (site) {
+        case "Home":
+            home.classList.add("active");
+            break;
+        case "Blog":
+            blog.classList.add("active");
+            break;
+        case "Rules":
+            rules.classList.add("active");
+            break;
+    }
+}
