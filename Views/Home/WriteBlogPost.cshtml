@@ -17,8 +17,8 @@
     <label asp-for="Name">Namn</label><br />
     <input asp-for="Name" /><br />
     @*error message*@
-    <label asp-for="Level">Vilken nivå spelar du på?</label><br />
     <span class="form-error-message" asp-validation-for="Name"></span><br />
+    <label asp-for="Level">Vilken nivå spelar du på?</label><br />
     <select asp-for="Level">
         <option value="">Ange vilken nivå du spelar på</option>
         <option value="Nybörjare">Nybörjare</option>
